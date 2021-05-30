@@ -359,7 +359,7 @@
     background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
 }
 
-.fa-laptop-code {
+.fa-laptop-code, .fa-users {
     font-size: 12rem;
 }
 
@@ -411,7 +411,7 @@
         width: 250px;
         height: 250px;
     }
-    .fa-laptop-code {
+    .fa-laptop-code, .fa-users {
         font-size: 4rem;
     }
     .main__content h1 {
@@ -539,5 +539,3 @@
         grid-template-columns: 1fr;
     }
 }
-
-
