@@ -1,6 +1,8 @@
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#navbar__logo');
+const submit = document.querySelector('#submit');
+
 
 //Display Mobile Menu
 const mobileMenu = () => {
@@ -9,8 +11,6 @@ const mobileMenu = () => {
 }
 
 menu.addEventListener('click', mobileMenu);
-
-
 
 // Show active menu  when scrolling 
 const highlightMenu = () => {
@@ -62,3 +62,21 @@ const hideMobileMenu = () => {
 
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
+
+const saveLead = async () => {
+    let clientName = document.getElementById("clientName").value;
+    let mobile = document.getElementById("mobile").value;
+    console.log(clientName, mobile);
+
+    let response = await fetch('http://localhost:8080/lead/save', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name: clientName, mobile: mobile })
+    });
+   
+    console.log(response);
+}
+submit.addEventListener('click', saveLead);
