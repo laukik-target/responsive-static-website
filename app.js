@@ -69,7 +69,7 @@ const saveLead = async () => {
 
     let clientName = document.getElementById("recipient-name").value
     let mobile = document.getElementById("mobile").value
-
+    document.getElementById("myForm").reset();
 
     // let response = await fetch('http://localhost:8080/lead/getLeads');
 
@@ -84,12 +84,12 @@ const saveLead = async () => {
             mobile: mobile
         })
     })
-    console.log(response2);
-    console.log(response);
+    $('#exampleModalCenter').modal('toggle'); //or  $('#IDModal').modal('hide');
+    
+    $('#exampleModal').modal('toggle'); //or  $('#IDModal').modal('hide');
+
+    return false;
 
 }
 
-
 submit.addEventListener('click', saveLead);
-
-
